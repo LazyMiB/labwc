@@ -1,0 +1,44 @@
+# Example autostart file
+
+# Set background color.
+swaybg -i '/home/alex/.local/share/wallpapers/uwp14342.jpeg' >/dev/null 2>&1 &
+
+# Configure output directives such as mode, position, scale and transform.
+# Use wlr-randr to get your output names
+# Example ~/.config/kanshi/config below:
+#   profile {
+#     output HDMI-A-1 position 1366,0
+#     output eDP-1 position 0,0
+#   }
+kanshi >/dev/null 2>&1 &
+
+# Launch a panel such as yambar or waybar.
+waybar --log-level off &
+
+# Enable notifications. Typically GNOME/KDE application notifications go
+# through the org.freedesktop.Notifications D-Bus API and require a client such
+# as mako to function correctly. Thunderbird is an example of this.
+mako >/dev/null 2>&1 &
+
+# Lock screen after 5 minutes; turn off display after another 5 minutes.
+#
+# Note that in the context of idle system power management, it is *NOT* a good
+# idea to turn off displays by 'disabling outputs' for example by
+# `wlr-randr --output <whatever> --off` because this re-arranges views
+# (since a837fef). Instead use a wlr-output-power-management client such as
+# https://git.sr.ht/~leon_plickat/wlopm
+swayidle -w \
+	# timeout 3600 'swaylock -f -c 000000 -i /DarkLandscapeHD.jpg' \
+	timeout 3660 'wlopm --off \*' \
+  timeout 5400 'systemctl syspend' \
+	resume 'wlopm --on \*' \
+	before-sleep 'swaylock -f -c 000000 -i /DarkLandscapeHD.jpg' >/dev/null 2>&1 &
+
+# gammastep -O 3500 -b 0.8 >/dev/null 2>&1 &
+# fcitx5 -r -d #& is not needed for daemon
+albert >/dev/null 2>&1 &
+nm-applet >/dev/null 2>&1 &
+copyq >/dev/null 2>&1 &
+conky >/dev/null 2>&1 &
+# blueman-applet >/dev/null 2>&1 &
+jgmenu --hide-on-startup >/dev/null 2>&1 &

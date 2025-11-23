@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+<!-- Note: for localization support of menu items "client-menu" has to be removed here -->
+<menu id="client-menu">
+  <item label="Minimize">
+    <action name="Iconify" />
+  </item>
+  <item label="Maximize">
+    <action name="ToggleMaximize" />
+  </item>
+  <item label="Fullscreen">
+    <action name="ToggleFullscreen" />
+  </item>
+  <item label="Roll Up/Down">
+    <action name="ToggleShade" />
+  </item>
+  <item label="Decorations">
+    <action name="ToggleDecorations" />
+  </item>
+  <item label="Always on Top">
+    <action name="ToggleAlwaysOnTop" />
+  </item>
+  <!--
+    Any menu with the id "workspaces" will be hidden
+    if there is only a single workspace available.
+  -->
+  <menu id="workspaces" label="Workspace">
+    <item label="Move Left">
+      <action name="SendToDesktop" to="left" />
+    </item>
+    <item label="Move Right">
+      <action name="SendToDesktop" to="right" />
+    </item>
+    <separator />
+    <item label="Always on Visible Workspace">
+      <action name="ToggleOmnipresent" />
+    </item>
+  </menu>
+  <!--
+    openbox default workspace selector
+    to use replace above workspace menu with the example below
+    the label is required, but you can change the text.
+
+    <menu id="client-send-to-menu" label="Send to..." />
+  -->
+  <item label="Close">
+    <action name="Close" />
+  </item>
+</menu>
+
+<menu id="custom-menu">
+  <!-- <separator label="custom menu" /> -->
+  <!-- Make client-list-combined-menu a submenu of root-menu 
+       You must supply a label or it will not appear in root-menu -->
+  <!--
+  <menu id="client-list-combined-menu" label="Running..." />
+  -->
+  <item label="jgmenu">
+    <action name="Execute" command="jgmenu_run" />
+  </item>
+  <item label="Foot">
+    <action name="Execute" command="foot" />
+  </item>
+  <item label="Mousepad">
+    <action name="Execute" command="mousepad" />
+  </item>
+  <item label="Thunar">
+    <action name="Execute" command="thunar" />
+  </item>
+  <item label="Chromium">
+    <action name="Execute" command="chromium" />
+  </item>
+  <item label="Vivaldi">
+    <action name="Execute" command="vivaldi" />
+  </item>
+  <item label="Firefox">
+    <action name="Execute" command="firefox" />
+  </item>
+  <item label="Telegram">
+    <action name="Execute" command="Telegram" />
+  </item>
+  <item label="Claws Mail">
+    <action name="Execute" command="claws-mail" />
+  </item>
+  <!-- <item label="Steam"> -->
+  <!--   <action name="Execute" command="firejail steam" /> -->
+  <!-- </item> -->
+  <!-- <item label="Steam"> -->
+  <!--   <action name="Execute" command="firejail /usr/bin/steam %U" /> -->
+  <!-- </item> -->
+  <item label="Discord">
+    <action name="Execute" command="/usr/bin/discord" />
+  </item>
+  <item label="Luanti">
+    <action name="Execute" command="luanti" />
+  </item>
+  <!-- <item label="XFCE Terminal"> -->
+  <!--   <action name="Execute" command="xfce4-terminal" /> -->
+  <!-- </item> -->
+  <item label="Reconfigure">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Lock">
+    <action name="Execute" command="swaylock -c 000000 -i /DarkLandscapeHD.jpg" />
+  </item>
+  <item label="Exit">
+    <action name="Exit" />
+  </item>
+  <!-- <item label="Poweroff"> -->
+  <!--   <action name="Execute" command="systemctl -i poweroff" /> -->
+  <!-- </item> -->
+</menu>
+
+</openbox_menu>
