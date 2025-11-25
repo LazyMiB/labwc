@@ -42,3 +42,6 @@ copyq >/dev/null 2>&1 &
 conky >/dev/null 2>&1 &
 # blueman-applet >/dev/null 2>&1 &
 jgmenu --hide-on-startup >/dev/null 2>&1 &
+
+# polkit
+/usr/lib/hyprpolkitagent/hyprpolkitagent >/dev/null 2>&1 &
