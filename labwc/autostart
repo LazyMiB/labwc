@@ -27,12 +27,12 @@ mako >/dev/null 2>&1 &
 # `wlr-randr --output <whatever> --off` because this re-arranges views
 # (since a837fef). Instead use a wlr-output-power-management client such as
 # https://git.sr.ht/~leon_plickat/wlopm
-swayidle -w \
+# swayidle -w \
 	# timeout 3600 'swaylock -f -c 000000 -i /DarkLandscapeHD.jpg' \
-	timeout 3660 'wlopm --off \*' \
-  timeout 5400 'systemctl syspend' \
-	resume 'wlopm --on \*' \
-	before-sleep 'swaylock -f -c 000000 -i /DarkLandscapeHD.jpg' >/dev/null 2>&1 &
+	# timeout 3660 'wlopm --off \*' \
+#   timeout 5400 'systemctl syspend' \
+# 	resume 'wlopm --on \*' \
+# 	before-sleep 'swaylock -f -c 000000 -i /DarkLandscapeHD.jpg' >/dev/null 2>&1 &
 
 # gammastep -O 3500 -b 0.8 >/dev/null 2>&1 &
 # fcitx5 -r -d #& is not needed for daemon
