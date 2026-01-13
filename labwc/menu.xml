@@ -102,7 +102,7 @@
     <action name="Reconfigure" />
   </item>
   <item label="Lock">
-    <action name="Execute" command="swaylock -c 000000 -i /DarkLandscapeHD.jpg" />
+    <action name="Execute" command="gtklock" />
   </item>
   <item label="Exit">
     <action name="Exit" />
